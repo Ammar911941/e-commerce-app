@@ -17,7 +17,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-linear-to-b from-orange-50 via-white to-orange-100 shadow-md rounded-b-2xl px-2 sm:px-6 py-2 relative mb-10 border-b border-orange-100">
+    <header className="bg-linear-to-b from-orange-50 via-white to-orange-100 shadow-md rounded-b-2xl px-2 sm:px-6 py-2 relative mb-10 border-b border-orange-100 ">
       <div className="container flex justify-between items-center max-w-7xl m-auto">
         <div className="logo h-12 w-32 flex items-center">
           <Link href="/" className="relative h-12 w-32 block">
