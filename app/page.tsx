@@ -9,7 +9,7 @@ export default function Home() {
       <Intro />
       <PopularProducts />
       <FeaturedProducts />
-      <Gaming />a
+      <Gaming />
     </>
   );
 }
