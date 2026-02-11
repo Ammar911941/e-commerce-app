@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { Products } from "@prisma/client";
 
-export default function ProductStyling({ product }: any) {
+type ProductProps = {
+  product: Products;
+};
+
+export default function ProductStyling({ product }: ProductProps) {
   return (
     <div className="product flex flex-col lg:flex-row justify-between items-start min-h-[71.5vh] gap-8 lg:gap-12 xl:gap-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="img relative w-full max-w-full lg:w-120 xl:w-130 h-80 sm:h-100 lg:h-120 xl:h-130 bg-linear-to-br from-orange-50 via-white to-orange-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 shrink-0 overflow-hidden group">

@@ -7,8 +7,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { getAllCategories } from "@/service/categories";
 export default async function Title({ name }: { name: string }) {
-  const categoriesName = ["a"];
+  const categories = await getAllCategories();
+  const categoriesName = categories.map((item) => {
+    return item.name;
+  });
   return (
     <div className="title mb-5 ">
       <h1 className="text-2xl font-medium mb-5">{name}</h1>

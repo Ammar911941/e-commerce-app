@@ -7,7 +7,7 @@ datasource db {
 }
 
 model User {
-    id      String @id @default(uuid())
+    id      String @id @unique @default(uuid())
     clerkId String @unique
     name    String
     email   String
@@ -15,7 +15,7 @@ model User {
 }
 
 model Products {
-    id          String   @id @default(uuid())
+    id          String   @id @unique @default(uuid())
     title       String
     description String
     price       Float
@@ -30,13 +30,13 @@ model Products {
 }
 
 model Category {
-    id       String     @id @default(uuid())
+    id       String     @id @unique @default(uuid())
     name     String     @unique
     products Products[]
 }
 
 model FeaturedProducts {
-    id          String @id @default(uuid())
+    id          String @id @unique @default(uuid())
     title       String
     description String
     image       String
@@ -44,7 +44,7 @@ model FeaturedProducts {
 }
 
 model Deals {
-    id      String @id @default(uuid())
+    id      String @id @unique @default(uuid())
     offer   String
     details String
     image   String

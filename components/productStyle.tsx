@@ -1,16 +1,9 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Link from "./link";
-type Product = {
-  title: string;
-  description: string;
-  price: number;
-  rate: number;
-  image: string;
-  id: string;
-};
+import { Products } from "@prisma/client";
 type productProps = {
-  products: Product[];
+  products: Products[];
   name: string;
 };
 export default function Product({ products, name }: productProps) {

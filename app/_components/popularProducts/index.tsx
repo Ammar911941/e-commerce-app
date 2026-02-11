@@ -1,36 +1,9 @@
 import Link from "@/components/link";
 import Product from "@/components/productStyle";
+import { getPopularProducts } from "@/service/products";
 
 export default async function PopularProducts() {
-  const popularProducts = [
-    {
-      title: "Apple AirPods Pro 2nd gen",
-      description:
-        "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience.",
-      price: 7999,
-      rate: 4,
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      id: "a",
-    },
-    {
-      title: "Apple AirPods Pro 2nd gen",
-      description:
-        "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience.",
-      price: 7999,
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      rate: 4,
-      id: "a",
-    },
-    {
-      title: "Apple AirPods Pro 2nd gen",
-      description:
-        "Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C) provide excellent sound, active noise cancellation, and a comfortable fit. The USB-C case ensures quick charging, and they pair seamlessly with Apple devices for an effortless audio experience.",
-      price: 7999,
-      rate: 4,
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      id: "a",
-    },
-  ];
+  const popularProducts = await getPopularProducts();
   return (
     <section>
       <div className="container max-w-7xl m-auto p-5">

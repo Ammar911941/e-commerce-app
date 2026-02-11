@@ -1,26 +1,7 @@
+import { getDeals } from "@/service/deals";
 import Swib from "./swiber/slider";
-export default function Intro() {
-  const deals = [
-    {
-      offer: "Limited Time Offer 30% Off",
-      details: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      link: "/a",
-    },
-    {
-      offer: "Limited Time Offer 30% Off",
-      details: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      link: "/a",
-    },
-    {
-      offer: "Limited Time Offer 30% Off",
-      details: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      link: "/a",
-    },
-  ];
-
+export default async function Intro() {
+  const deals = await getDeals();
   return (
     <section>
       <div className="container max-w-7xl m-auto p-5">

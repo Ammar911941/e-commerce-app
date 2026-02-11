@@ -1,28 +1,10 @@
 import Image from "next/image";
 import Link from "@/components/link";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
+import { getFeaturedProducts } from "@/service/products";
 
 export default async function FeaturedProducts() {
-  const featuredProducts = [
-    {
-      title: "Unparalleled Sound",
-      description: "Unparalleled Sound",
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      link: "/",
-    },
-    {
-      title: "Unparalleled Sound",
-      description: "Unparalleled Sound",
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      link: "/",
-    },
-    {
-      title: "Unparalleled Sound",
-      description: "Unparalleled Sound",
-      image: "/eztpmcwxkww1mlqijtse.avif",
-      link: "/",
-    },
-  ];
+  const featuredProducts = await getFeaturedProducts();
   return (
     <section className="py-10 bg-linear-to-br from-orange-50 via-white to-orange-100">
       <div className="container max-w-7xl m-auto relative px-4 sm:px-8">
