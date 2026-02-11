@@ -1,8 +1,8 @@
-export default function ShopPage() {
+import Products from "./products";
+export default async function Shop() {
   return (
-    <main>
-      <h1>Shop</h1>
-      <p>Welcome to the shop page.</p>
-    </main>
+    <section className="container mx-auto p-4">
+      <Products />
+    </section>
   );
 }

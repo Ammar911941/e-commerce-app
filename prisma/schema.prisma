@@ -8,8 +8,45 @@ datasource db {
 
 model User {
     id      String @id @default(uuid())
+    clerkId String @unique
     name    String
     email   String
     role    String
-    clerkId String
+}
+
+model Products {
+    id          String   @id @default(uuid())
+    title       String
+    description String
+    price       Float
+    image       String
+    rate        Float
+    order       Int
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    category   Category @relation(fields: [categoryId], references: [id])
+    categoryId String
+}
+
+model Category {
+    id       String     @id @default(uuid())
+    name     String     @unique
+    products Products[]
+}
+
+model FeaturedProducts {
+    id          String @id @default(uuid())
+    title       String
+    description String
+    image       String
+    link        String
+}
+
+model Deals {
+    id      String @id @default(uuid())
+    offer   String
+    details String
+    image   String
+    link    String
 }

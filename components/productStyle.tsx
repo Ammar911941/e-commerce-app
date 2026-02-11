@@ -7,6 +7,7 @@ type Product = {
   price: number;
   rate: number;
   image: string;
+  id: string;
 };
 type productProps = {
   products: Product[];
@@ -29,7 +30,6 @@ export default function Product({ products, name }: productProps) {
               sizes="(max-width: 478px) 100vw, (max-width: 768px) 50vw, 220px"
               fill
               className="p-3 object-contain drop-shadow-md"
-              loading="lazy"
             />
           </div>
           <div className="text px-4 flex-1 flex flex-col">
@@ -56,10 +56,10 @@ export default function Product({ products, name }: productProps) {
           </div>
           <div className="price flex justify-between items-center gap-3 px-4 py-3 border-t border-orange-50 bg-orange-50">
             <p className="text-base font-bold text-orange-700 truncate shrink min-w-0">
-              {item.price}
+              EGP {item.price}
             </p>
             <Link
-              href={`/product/${index}`}
+              href={`/product/${item.id}`}
               className="px-5 py-2 text-white bg-orange-700 rounded-full text-xs font-semibold shadow hover:bg-orange-800 transition-colors duration-200 shrink-0"
             >
               Buy Now
