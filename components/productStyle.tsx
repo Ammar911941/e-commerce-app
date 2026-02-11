@@ -1,8 +1,18 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Link from "./link";
-
-export default function Product({ products, name }: any) {
+type Product = {
+  title: string;
+  description: string;
+  price: number;
+  rate: number;
+  image: string;
+};
+type productProps = {
+  products: Product[];
+  name: string;
+};
+export default function Product({ products, name }: productProps) {
   return (
     <div
       className={`${name} grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 justify-between max-[478px]:justify-center mb-5`}
@@ -49,7 +59,7 @@ export default function Product({ products, name }: any) {
               {item.price}
             </p>
             <Link
-              href={`/product/${item.id}`}
+              href={`/product/${index}`}
               className="px-5 py-2 text-white bg-orange-700 rounded-full text-xs font-semibold shadow hover:bg-orange-800 transition-colors duration-200 shrink-0"
             >
               Buy Now

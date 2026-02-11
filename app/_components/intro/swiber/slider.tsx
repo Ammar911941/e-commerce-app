@@ -7,8 +7,18 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 import Image from "next/image";
 import Link from "@/components/link";
+type Deal = {
+  offer: string;
+  details: string;
+  link: string;
+  image: string;
+};
 
-export default function Swib({ deals }: any) {
+type SwibProps = {
+  deals: Deal[];
+};
+
+export default function Swib({ deals }: SwibProps) {
   return (
     <Swiper
       modules={[Autoplay, Pagination]}
@@ -27,7 +37,7 @@ export default function Swib({ deals }: any) {
       style={{ height: "auto" }}
     >
       {deals.map((deal, index) => (
-        <SwiperSlide key={deal.id} className="h-auto!">
+        <SwiperSlide key={index} className="h-auto!">
           <div className="slide h-full bg-linear-to-br from-orange-50 via-white to-orange-100 p-8 sm:p-12 flex gap-10 min-[668px]:ps-20 items-center max-[668px]:flex-col-reverse max-[668px]:gap-5 rounded-3xl shadow-xl border border-orange-100 transition-transform duration-300 hover:scale-[1.01]">
             <div className="text max-w-lg">
               <p className="text-orange-700 mb-3 font-semibold tracking-wide uppercase text-sm drop-shadow">
