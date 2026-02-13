@@ -26,7 +26,7 @@ export async function getProductsById(id: string) {
     return await db.products.findUnique({ where: { id: id } });
   } catch (error) {
     console.log(error);
-    return [];
+    return null;
   }
 }
 
