@@ -7,9 +7,11 @@ import { IoCartOutline } from "react-icons/io5";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
+import { useUser } from "@clerk/nextjs";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { user } = useUser();
+  const role = user?.publicMetadata?.role;
   // Handle Toggle
   function handleToggleClick() {
     if (isOpen) setIsOpen(false);
@@ -56,6 +58,13 @@ export default function Header() {
                 Contact
               </Link>
             </li>
+            {role === "admin" && (
+              <li>
+                <Link href={"/admin"} onClick={() => setIsOpen(false)}>
+                  Admin
+                </Link>
+              </li>
+            )}
             <li>
               <Link href={"/cart"} onClick={() => setIsOpen(false)}>
                 <IoCartOutline className="h-6 w-6" />

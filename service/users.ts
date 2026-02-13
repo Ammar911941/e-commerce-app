@@ -1,9 +1,19 @@
 import { db } from "@/lib/prisma";
 
 export async function getAllUsers() {
-  return await db.user.findMany();
+  try {
+    return await db.user.findMany();
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
 }
 
 export async function getUserById(id: string) {
-  return await db.user.findUnique({ where: { clerkId: id } });
+  try {
+    return await db.user.findUnique({ where: { clerkId: id } });
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
 }
