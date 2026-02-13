@@ -22,7 +22,7 @@ export default async function PopularProducts() {
           </>
         ) : (
           <p className="font-medium text-2xl text-blue-950 mb-5 text-center">
-            No Popular Products
+            No Popular Products Founded
           </p>
         )}
       </div>
