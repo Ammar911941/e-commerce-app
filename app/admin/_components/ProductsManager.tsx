@@ -224,13 +224,14 @@ export default function ProductsManager() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="title">
                   Title
                 </label>
                 <input
                   type="text"
                   required
                   value={formData.title}
+                  id="title"
                   onChange={(e) =>
                     setFormData({ ...formData, title: e.target.value })
                   }
@@ -238,11 +239,12 @@ export default function ProductsManager() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="price">
                   Price
                 </label>
                 <input
                   type="number"
+                  id="price"
                   step="0.01"
                   required
                   value={formData.price}
@@ -253,11 +255,12 @@ export default function ProductsManager() {
                 />
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="image">
                   Product Image
                 </label>
                 <input
                   type="file"
+                  id="image"
                   accept="image/*"
                   onChange={handleFileChange}
                   className="w-full px-4 py-2 border border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100"
@@ -273,7 +276,7 @@ export default function ProductsManager() {
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="rate">
                   Rating (1-5)
                 </label>
                 <input
@@ -283,6 +286,7 @@ export default function ProductsManager() {
                   max="5"
                   required
                   value={formData.rate}
+                  id="rate"
                   onChange={(e) =>
                     setFormData({ ...formData, rate: e.target.value })
                   }
@@ -290,13 +294,14 @@ export default function ProductsManager() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="order">
                   Order
                 </label>
                 <input
                   type="number"
                   required
                   value={formData.order}
+                  id="order"
                   onChange={(e) =>
                     setFormData({ ...formData, order: e.target.value })
                   }
@@ -304,12 +309,13 @@ export default function ProductsManager() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="category">
                   Category
                 </label>
                 <select
                   required
                   value={formData.categoryId}
+                  id="category"
                   onChange={(e) =>
                     setFormData({ ...formData, categoryId: e.target.value })
                   }
@@ -325,11 +331,12 @@ export default function ProductsManager() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="description">
                 Description
               </label>
               <textarea
                 required
+                id="description"
                 rows={3}
                 value={formData.description}
                 onChange={(e) =>

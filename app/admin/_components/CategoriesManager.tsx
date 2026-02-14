@@ -88,12 +88,13 @@ export default function CategoriesManager() {
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="categoryName">
                 Category Name
               </label>
               <input
                 type="text"
                 required
+                id="categoryName"
                 value={categoryName}
                 onChange={(e) => setCategoryName(e.target.value)}
                 className="w-full px-4 py-2 border border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"

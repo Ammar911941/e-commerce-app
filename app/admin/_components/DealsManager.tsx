@@ -201,12 +201,13 @@ export default function DealsManager() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="offer">
                   Offer Title
                 </label>
                 <input
                   type="text"
                   required
+                  id="offer"
                   value={formData.offer}
                   onChange={(e) =>
                     setFormData({ ...formData, offer: e.target.value })
@@ -216,12 +217,13 @@ export default function DealsManager() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="link">
                   Link
                 </label>
                 <input
                   type="text"
                   required
+                  id="link"
                   value={formData.link}
                   onChange={(e) =>
                     setFormData({ ...formData, link: e.target.value })
@@ -231,9 +233,9 @@ export default function DealsManager() {
                 />
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <p className="block text-sm font-medium text-gray-700 mb-2" >
                   Quick Links (Category-based)
-                </label>
+                </p>
                 <div className="flex flex-wrap gap-2">
                   <button
                     type="button"
@@ -260,12 +262,13 @@ export default function DealsManager() {
                 </div>
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="image">
                   Deal Image
                 </label>
                 <input
                   type="file"
                   accept="image/*"
+                  id="image"
                   onChange={handleFileChange}
                   className="w-full px-4 py-2 border border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100"
                 />
@@ -281,12 +284,13 @@ export default function DealsManager() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="details">
                 Details
               </label>
               <textarea
                 required
                 rows={3}
+                id="details"
                 value={formData.details}
                 onChange={(e) =>
                   setFormData({ ...formData, details: e.target.value })

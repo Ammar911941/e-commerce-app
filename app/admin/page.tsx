@@ -8,6 +8,7 @@ import FeaturedManager from "./_components/FeaturedManager";
 import DealsManager from "./_components/DealsManager";
 import CategoriesManager from "./_components/CategoriesManager";
 import OrdersManager from "./_components/OrdersManager";
+
 export default function Admin() {
   const [activeTab, setActiveTab] = useState("orders");
   const [isAdmin, setIsAdmin] = useState(false);
@@ -30,7 +31,6 @@ export default function Admin() {
       setLoading(false);
     }
   };
-
 
   if (loading || !user) {
     return (
