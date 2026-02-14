@@ -143,8 +143,6 @@ export async function DELETE(request: NextRequest) {
       where: { id: orderId },
     });
 
-    console.log(`✅ Deleted cancelled order: ${order.orderNumber}`);
-
     return NextResponse.json({
       success: true,
       message: "Order deleted successfully",

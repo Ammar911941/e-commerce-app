@@ -70,7 +70,7 @@ export default function CategoriesManager() {
   }
 
   return (
-    <div className="space-y-6">
+    <section className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-900">Categories</h2>
         <button
@@ -140,6 +140,6 @@ export default function CategoriesManager() {
           products.
         </div>
       )}
-    </div>
+    </section>
   );
 }
