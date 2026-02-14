@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { syncUser } from "@/lib/sync-user";
+import { CartProvider } from "@/contexts/cartContext";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,13 +27,15 @@ export default async function RootLayout({
   await syncUser();
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${outfit.className} antialiased`}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </body>
-      </html>
+      <CartProvider>
+        <html lang="en">
+          <body className={`${outfit.className} antialiased`}>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </body>
+        </html>
+      </CartProvider>
     </ClerkProvider>
   );
 }

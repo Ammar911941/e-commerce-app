@@ -1,11 +1,45 @@
-import Image from "next/image";
+"use client";
 import { Products } from "@prisma/client";
-
+import { useRouter } from "next/navigation";
+import { useCart } from "../../contexts/cartContext";
+import { useState } from "react";
 type ProductProps = {
   product: Products;
 };
+import Image from "next/image";
 
 export default function ProductStyling({ product }: ProductProps) {
+  const { addToCart, cart } = useCart();
+  const router = useRouter();
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddToCart = () => {
+    setIsAdding(true);
+    addToCart({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+      description: product.description || "",
+    });
+    setTimeout(() => setIsAdding(false), 500);
+  };
+
+  const handleBuyNow = () => {
+    // Only add to cart if product is not already in cart
+    const isInCart = cart.some((item) => item.id === product.id);
+    if (!isInCart) {
+      addToCart({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+        description: product.description || "",
+      });
+    }
+    router.push("/cart");
+  };
+
   return (
     <div className="product flex flex-col lg:flex-row justify-between items-start min-h-[71.5vh] gap-8 lg:gap-12 xl:gap-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="img relative w-full max-w-full lg:w-120 xl:w-130 h-80 sm:h-100 lg:h-120 xl:h-130 bg-linear-to-br from-orange-50 via-white to-orange-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 shrink-0 overflow-hidden group">
@@ -32,11 +66,17 @@ export default function ProductStyling({ product }: ProductProps) {
         </div>
         <div className="buttons flex flex-col sm:flex-row items-stretch sm:items-center mt-8 sm:mt-10 gap-3 sm:gap-4 text-center">
           <button
-            className={`w-full sm:flex-1 py-3 sm:py-3.5 px-6 bg-white text-gray-800 border-2 border-gray-200 hover:border-orange-500 hover:bg-orange-50 hover:text-orange-700 transition-all duration-300 rounded-xl font-medium shadow-sm hover:shadow-md  `}
+            onClick={handleAddToCart}
+            className={`w-full sm:flex-1 py-3 sm:py-3.5 px-6 bg-white text-gray-800 border-2 border-gray-200 hover:border-orange-500 hover:bg-orange-50 hover:text-orange-700 transition-all duration-300 rounded-xl font-medium shadow-sm hover:shadow-md ${
+              isAdding ? "bg-orange-50 border-orange-500" : ""
+            }`}
           >
-            Add to Cart
+            {isAdding ? "Added!" : "Add to Cart"}
           </button>
-          <button className="w-full sm:flex-1 py-3 sm:py-3.5 px-6 bg-orange-500 text-white hover:bg-orange-600 active:bg-orange-700 transition-all duration-300 rounded-xl font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+          <button
+            onClick={handleBuyNow}
+            className="w-full sm:flex-1 py-3 sm:py-3.5 px-6 bg-orange-500 text-white hover:bg-orange-600 active:bg-orange-700 transition-all duration-300 rounded-xl font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+          >
             Buy now
           </button>
         </div>
