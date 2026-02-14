@@ -3,6 +3,7 @@ import { useCart } from "@/contexts/cartContext";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "@/components/link";
 
 export default function Cart() {
   const router = useRouter();
@@ -144,12 +145,12 @@ export default function Cart() {
                 <p className="text-gray-600 mb-6">
                   Add some products to get started!
                 </p>
-                <a
+                <Link
                   href="/shop"
                   className="inline-block px-6 py-3 bg-orange-500 text-white rounded-xl font-semibold hover:bg-orange-600 transition-colors"
                 >
                   Continue Shopping
-                </a>
+                </Link>
               </div>
             ) : (
               cart.map((item) => (
