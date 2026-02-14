@@ -47,16 +47,6 @@ export async function PATCH(request: NextRequest) {
       include: { items: true },
     });
 
-    console.log(
-      `📝 Order ${updatedOrder.orderNumber} status updated to ${status}`,
-    );
-
-    // CRITICAL: Wait for email to send before responding
-    // This ensures reliable delivery in serverless environments
-    console.log(
-      `📧 Sending status update email for order ${updatedOrder.orderNumber}...`,
-    );
-
     return NextResponse.json(updatedOrder);
   } catch (error) {
     console.error("Error updating order status:", error);
