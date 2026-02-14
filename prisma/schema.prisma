@@ -25,8 +25,9 @@ model Products {
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
 
-    category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+    category   Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
     categoryId String
+    orderItems OrderItem[]
 }
 
 model Category {
@@ -49,4 +50,60 @@ model Deals {
     details String
     image   String
     link    String
+}
+
+// Order model for guest and authenticated checkout
+model Order {
+    id          String      @id @default(uuid())
+    orderNumber String      @unique
+    status      OrderStatus @default(PENDING)
+
+    // Customer details (for guest checkout)
+    customerName  String
+    customerEmail String
+    customerPhone String
+
+    // Shipping address
+    address String
+    city    String
+    zipCode String
+    country String
+
+    // Order totals
+    subtotal    Float
+    totalAmount Float
+
+    // Timestamps
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    // Relations
+    items OrderItem[]
+}
+
+model OrderItem {
+    id       String @id @default(uuid())
+    quantity Int
+    price    Float
+
+    // Product details snapshot (in case product changes later)
+    productTitle String
+    productImage String
+
+    // Relations
+    order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+    orderId   String
+    product   Products @relation(fields: [productId], references: [id])
+    productId String
+
+    createdAt DateTime @default(now())
+}
+
+enum OrderStatus {
+    PENDING
+    CONFIRMED
+    PROCESSING
+    SHIPPED
+    DELIVERED
+    CANCELLED
 }
