@@ -49,7 +49,7 @@ export default function Admin() {
 
   if (!isAdmin) {
     return (
-      <div className="flex justify-center items-center mt-10">
+      <section className="flex justify-center items-center mt-25">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Access Denied
@@ -58,7 +58,7 @@ export default function Admin() {
             You don't have permission to access the admin panel.
           </p>
         </div>
-      </div>
+      </section>
     );
   }
 
