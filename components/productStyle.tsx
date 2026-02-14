@@ -25,14 +25,14 @@ export default function Product({ products, name }: productProps) {
               className="p-3 object-contain drop-shadow-md"
             />
           </div>
-          <div className="text px-4 flex-1 flex flex-col">
+          <div className="text px-4 flex-1 flex flex-col relative min-h-32">
             <h4 className="font-semibold text-lg mb-1 text-gray-900 group-hover:text-orange-700 transition-colors line-clamp-2">
               {item.title}
             </h4>
             <p className="text-xs text-gray-500/80 mb-2 line-clamp-2">
               {item.description}
             </p>
-            <div className="rate flex items-center mb-2">
+            <div className="rate flex items-center mb-2 absolute bottom-0">
               <p className="text-orange-500 font-semibold me-2">{item.rate}</p>
               <div className="imgRate flex gap-0.5">
                 {Array.from({ length: 5 }, (_, index) => {
