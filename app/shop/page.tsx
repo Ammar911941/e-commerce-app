@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default async function Shop() {
   return (
-    <section className="container mx-auto p-4">
+    <section className="container mx-auto p-4 mt-30">
       <Products />
     </section>
   );

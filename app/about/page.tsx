@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="flex items-center justify-center min-h-[70vh] p-2 sm:p-4 mb-16">
+    <section className="flex items-center justify-center min-h-[70vh] p-2 sm:p-4 mb-16 mt-25">
       <div className="w-full max-w-3xl bg-linear-to-br from-orange-50 via-white to-orange-100 rounded-2xl shadow-2xl p-2 sm:p-10">
         <h1 className="text-5xl font-extrabold mb-10 text-center text-orange-700 tracking-tight drop-shadow-lg flex items-center justify-center gap-3">
           <span className="inline-block bg-orange-700/10 rounded-full p-2">

@@ -3,7 +3,7 @@ import Swib from "./swiber/slider";
 export default async function Intro() {
   const deals = await getDeals();
   return (
-    <section>
+    <section className="mt-25">
       <div className="container max-w-7xl m-auto p-5">
         {deals.length ? (
           <Swib deals={deals} />

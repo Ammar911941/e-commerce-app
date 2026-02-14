@@ -34,7 +34,7 @@ export default function Admin() {
 
   if (loading || !user) {
     return (
-      <div className=" flex justify-center items-center">
+      <div className=" flex justify-center items-center mt-10">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-orange-600 mx-auto mb-4"></div>
           {!user && (
@@ -49,7 +49,7 @@ export default function Admin() {
 
   if (!isAdmin) {
     return (
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-10">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Access Denied
@@ -72,7 +72,7 @@ export default function Admin() {
   ];
 
   return (
-    <div className=" bg-linear-to-br from-orange-50 via-white to-orange-100">
+    <section className=" bg-linear-to-br from-orange-50 via-white to-orange-100 mt-30">
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -111,6 +111,6 @@ export default function Admin() {
           {activeTab === "deals" && <DealsManager />}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
