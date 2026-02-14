@@ -33,9 +33,11 @@ export default async function RootLayout({
     <ClerkProvider>
       <CartProvider>
         <html lang="en">
-          <body className={`${outfit.className} antialiased`}>
+          <body
+            className={`${outfit.className} antialiased flex flex-col min-h-screen`}
+          >
             <Header />
-            <main>{children}</main>
+            <main className="grow">{children}</main>
             <Footer />
           </body>
         </html>
