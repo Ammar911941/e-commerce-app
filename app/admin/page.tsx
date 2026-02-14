@@ -34,7 +34,7 @@ export default function Admin() {
 
   if (loading || !user) {
     return (
-      <div className=" flex justify-center items-center mt-10">
+      <section className=" flex justify-center items-center mt-25">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-orange-600 mx-auto mb-4"></div>
           {!user && (
@@ -43,7 +43,7 @@ export default function Admin() {
             </p>
           )}
         </div>
-      </div>
+      </section>
     );
   }
 
