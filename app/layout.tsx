@@ -21,6 +21,18 @@ export const metadata: Metadata = {
   },
   description:
     "Discover the best deals on electronics, gaming gear, fashion, and more. Shop with confidence at E-Commerce - your trusted online store with fast delivery and excellent customer service.",
+  keywords: [
+    "online shopping",
+    "e-commerce",
+    "electronics",
+    "gaming gear",
+    "fashion",
+    "deals",
+    "online store",
+    "buy online",
+    "shopping",
+    "products",
+  ],
 };
 
 export default async function RootLayout({

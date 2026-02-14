@@ -23,6 +23,7 @@ export async function generateMetadata({
     description:
       product.description ||
       `Shop ${product.title} at the best price. High-quality products with fast delivery and secure checkout.`,
+    keywords: [product.title, "buy online", "shop", "e-commerce"],
   };
 }
 

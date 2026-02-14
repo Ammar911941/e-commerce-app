@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: "Contact Us - Get in Touch with E-Commerce",
   description:
     "Have questions? Contact our customer support team. We're here to help with your orders, product inquiries, and any concerns. Fast response guaranteed.",
+  keywords: [
+    "contact us",
+    "customer support",
+    "help",
+    "customer service",
+    "get in touch",
+    "support email",
+  ],
 };
 
 export default function Contact() {

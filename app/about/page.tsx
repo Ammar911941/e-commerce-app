@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: "About Us - Learn More About E-Commerce",
   description:
     "Learn about our mission to deliver the best online shopping experience. Discover our commitment to quality products, exceptional customer service, and fast delivery.",
+  keywords: [
+    "about us",
+    "company mission",
+    "our story",
+    "online shopping",
+    "customer service",
+    "quality products",
+  ],
 };
 
 export default function About() {
