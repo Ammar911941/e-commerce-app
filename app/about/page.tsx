@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us - Learn More About E-Commerce",
+  description:
+    "Learn about our mission to deliver the best online shopping experience. Discover our commitment to quality products, exceptional customer service, and fast delivery.",
+};
+
 export default function About() {
   return (
     <section className="flex items-center justify-center min-h-[70vh] p-2 sm:p-4 mb-16">

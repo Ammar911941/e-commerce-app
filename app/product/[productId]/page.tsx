@@ -1,6 +1,30 @@
 import { notFound } from "next/navigation";
 import { getProductsById } from "@/service/products";
 import ProductStyling from "../productStyle";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ productId: string }>;
+}): Promise<Metadata> {
+  const { productId } = await params;
+  const product = await getProductsById(productId);
+
+  if (!product) {
+    return {
+      title: "Product Not Found",
+      description: "The requested product could not be found.",
+    };
+  }
+
+  return {
+    title: `${product.title} - Buy Online`,
+    description:
+      product.description ||
+      `Shop ${product.title} at the best price. High-quality products with fast delivery and secure checkout.`,
+  };
+}
 
 export default async function Product({
   params,

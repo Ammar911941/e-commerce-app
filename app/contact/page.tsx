@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us - Get in Touch with E-Commerce",
+  description:
+    "Have questions? Contact our customer support team. We're here to help with your orders, product inquiries, and any concerns. Fast response guaranteed.",
+};
+
 export default function Contact() {
   return (
     <section className="flex items-center justify-center min-h-[70vh] p-2 sm:p-4 mb-16">
