@@ -5,7 +5,19 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "media.cdn.kaufland.de",
+      },
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+      },
+      {
+        protocol: "https",
+        hostname: "crdms.images.consumerreports.org",
+      },
+      {
+        protocol: "https",
+        hostname: "oneearpod.com",
       },
     ],
   },
