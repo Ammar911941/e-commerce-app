@@ -35,7 +35,7 @@ export default async function Category({
   const name = decodeURIComponent(categoryName);
   const products = await getProductsBasedOnCategory(name);
   return (
-    <section>
+    <section className="mt-35">
       <div className="container max-w-7xl m-auto p-5">
         <>
           <Title name={name} />
