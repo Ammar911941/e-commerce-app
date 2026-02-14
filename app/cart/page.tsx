@@ -80,7 +80,7 @@ export default function Cart() {
   // Success Screen
   if (orderSuccess) {
     return (
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-25">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-15">
         <div className="max-w-xl mx-auto text-center">
           <div className="bg-white rounded-3xl shadow-xl p-10 border border-orange-100">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -126,7 +126,7 @@ export default function Cart() {
   }
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-25">
       <div className="container flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
         {/* Products Section */}
         <div className="products-section flex-1">

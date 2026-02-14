@@ -8,9 +8,12 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import { useCart } from "@/contexts/cartContext";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useUser();
+  const { cart } = useCart();
+
   const role = user?.publicMetadata?.role;
   // Handle Toggle
   function handleToggleClick() {
@@ -66,8 +69,17 @@ export default function Header() {
               </li>
             )}
             <li>
-              <Link href={"/cart"} onClick={() => setIsOpen(false)}>
+              <Link
+                href={"/cart"}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center relative"
+              >
                 <IoCartOutline className="h-6 w-6" aria-label="Cart" />
+                {cart.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">
+                    {cart.length}
+                  </span>
+                )}
               </Link>
             </li>
           </ul>

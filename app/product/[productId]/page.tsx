@@ -41,7 +41,7 @@ export default async function Product({
   }
 
   return (
-    <section>
+    <section className="mt-30">
       <div className="container max-w-7xl m-auto p-5">
         <ProductStyling product={product} />
       </div>
