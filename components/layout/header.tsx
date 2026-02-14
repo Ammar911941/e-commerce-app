@@ -67,7 +67,7 @@ export default function Header() {
             )}
             <li>
               <Link href={"/cart"} onClick={() => setIsOpen(false)}>
-                <IoCartOutline className="h-6 w-6" />
+                <IoCartOutline className="h-6 w-6" aria-label="Cart" />
               </Link>
             </li>
           </ul>
