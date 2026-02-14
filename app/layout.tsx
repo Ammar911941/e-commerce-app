@@ -16,11 +16,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "E-Commerce - Your Premium Online Shopping Destination",
-    template: "%s | E-Commerce",
+    default: "Elvaro - Your Premium Online Shopping Destination",
+    template: "%s | Elvaro",
   },
   description:
-    "Discover the best deals on electronics, gaming gear, fashion, and more. Shop with confidence at E-Commerce - your trusted online store with fast delivery and excellent customer service.",
+    "Discover the best deals on electronics, gaming gear, fashion, and more. Shop with confidence at Elvaro - your trusted online store with fast delivery and excellent customer service.",
   keywords: [
     "online shopping",
     "e-commerce",
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     "buy online",
     "shopping",
     "products",
+    "Elvaro",
   ],
 };
 

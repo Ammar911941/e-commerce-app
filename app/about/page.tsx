@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us - Learn More About E-Commerce",
+  title: "About Us - Learn More About Elvaro",
   description:
     "Learn about our mission to deliver the best online shopping experience. Discover our commitment to quality products, exceptional customer service, and fast delivery.",
   keywords: [

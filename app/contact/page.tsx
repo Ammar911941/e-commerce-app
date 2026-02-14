@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Get in Touch with E-Commerce",
+  title: "Contact Us - Get in Touch with Elvaro Support",
   description:
     "Have questions? Contact our customer support team. We're here to help with your orders, product inquiries, and any concerns. Fast response guaranteed.",
   keywords: [

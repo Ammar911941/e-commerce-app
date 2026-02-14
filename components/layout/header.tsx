@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "../link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { RiAccountCircleLine } from "react-icons/ri";
@@ -25,15 +24,8 @@ export default function Header() {
     <header className="bg-linear-to-b from-orange-50 via-white to-orange-100 shadow-md rounded-b-2xl px-2 sm:px-6 py-2  mb-10 border-b border-orange-100 fixed w-full z-50 ">
       <div className="container flex justify-between items-center max-w-7xl m-auto">
         <div className="logo h-12 w-32 flex items-center">
-          <Link href="/" className="relative h-12 w-32 block">
-            <Image
-              src="/logo.svg"
-              alt="Logo Image"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-              className="object-contain"
-            />
+          <Link href="/" className="relative h-12 w-32  flex items-center">
+            <h1 className="font-bold text-3xl text-orange-700">Elvaro</h1>
           </Link>
         </div>
         <nav>
