@@ -60,7 +60,7 @@ export default function Swib({ deals }: SwibProps) {
                 sizes="(max-width: 768px) 256px, 320px"
                 alt={`${deal.offer} - ${deal.details}`}
                 className="object-contain"
-                priority
+                priority={index === 0}
               />
             </div>
           </div>
